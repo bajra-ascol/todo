@@ -1,0 +1,8 @@
+stages:
+  - test
+
+test-job:
+  stage: test
+  script:
+    - npm install
+    - npm run headless

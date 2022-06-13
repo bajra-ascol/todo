@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "open-cypress": "npx cypress open"
+    "open-cypress": "npx cypress open",
+    "headless": "npx cypress run --headless"
   },
   "keywords": [],
   "author": "",
