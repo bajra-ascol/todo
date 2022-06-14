@@ -3,7 +3,7 @@ describe("login to bajra", () => {
     cy.visit("login");
   });
   it("Verify login using incorrect email and password", () => {
-    cy.xpath("//input[@id='loginn']")
+    cy.xpath("//input[@id='login']")
       .clear()
       .type(Cypress.env("incorrect_username"));
     cy.xpath("//input[@id='password']")
