@@ -5,7 +5,12 @@
 ## Getting started
 
 To start the application use the following commands
-- npm install
+```
+cd todo
+npm install
+nox cypress open
+
+```
 
 Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
 
