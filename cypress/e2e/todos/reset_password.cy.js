@@ -1,17 +1,15 @@
-describe("Todo user forget password", () => {
+describe("Todo user reset password", () => {
   beforeEach(() => {
     cy.visit("login");
-    cy.xpath("//input[@id='email']")
-      .clear()
-      .type("ascol.parajuli@bajratechnologies.com");
-    cy.xpath("//input[@id='password']").clear().type("Aascol123.");
-    cy.xpath("//button[normalize-space()='Login']").click();
-    cy.xpath("//span[@class='header-user']").should("include.text", "AP");
+    cy.get("#email").clear().type("ascol.parajuli@bajratechnologies.com");
+    cy.get("#password").clear().type("Aascol123.");
+    cy.get(".btn").click();
+    cy.get(".header-user").should("include.text", "AP");
     cy.visit("resetPassword");
   });
   //input fiend validation
   it("Verify if the input field is validated", () => {
-    cy.xpath("//button[normalize-space()='Reset Password']").click();
+    cy.get(".btn").click();
     cy.on("window:alert", (t) => {
       //assertions
       expect(t).to.contains("Password  invalid");
@@ -25,7 +23,7 @@ describe("Todo user forget password", () => {
     cy.get("input[placeholder='Confirm Your Password']")
       .clear()
       .type("Aascol123.");
-    cy.xpath("//button[normalize-space()='Reset Password']").click();
+    cy.get(".btn").click();
     cy.on("window:alert", (t) => {
       //assertions
       expect(t).to.contains("Password Reset Sucessful");
